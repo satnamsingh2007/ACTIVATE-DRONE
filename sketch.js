@@ -9,14 +9,14 @@ var myengine, myworld;
 var ground, ball;
 
 function preload() {
-  bgImg = loadImage("images/room-08.png");
-  basketImg = loadImage("images/basket1.png");
-  droneImg = loadImage("images/drone.png");
-  toy1Img = loadImage("images/room-02.png");
-  toy2Img = loadImage("images/room-03.png");
-  toy3Img = loadImage("images/room-04.png");
-  toy5Img = loadImage("images/room-06.png");
-  toy6Img = loadImage("images/room-07.png");
+  bgImg = loadImage("room-08.png");
+  basketImg = loadImage("basket1.png");
+  droneImg = loadImage("drone.png");
+  toy1Img = loadImage("room-02.png");
+  toy2Img = loadImage("room-03.png");
+  toy3Img = loadImage("room-04.png");
+  toy5Img = loadImage("room-06.png");
+  toy6Img = loadImage("room-07.png");
 }
 
 function setup() {
@@ -43,7 +43,11 @@ function setup() {
   bottomBasket = new Wall(550, 350, 300, 20);
 
   // add mouse constraint here
-  
+  var mouseobject = Mouse.create(canvas.elt)
+  option = {mouse:mouseobject}
+  mcon = MouseConstraint.create(engine,option)
+  World.add(world,mcon)
+
 
 
 
